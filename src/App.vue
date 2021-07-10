@@ -18,12 +18,19 @@ export default {
         {
           title: "Learn Possibilities",
           list: [
-            "We enrich throught learning.",
-            "Maximizing potential through individual attention.",
-            "The trusted name for specialized training.",
-            "People teach. People learn. This in whewe they connect.",
+            {
+              image: "h12-tabs-icon-1",
+              text: "We enrich throught learning.",
+            },
+            {
+              image: "h12-tabs-icon-1",
+              text: "We enrich throught learning.",
+            },
+            {
+              image: "h12-tabs-icon-1",
+              text: "We enrich throught learning.",
+            },
           ],
-          image: "h12-tabs-icon-1",
         },
         {
           title: "Degree",
@@ -34,10 +41,15 @@ export default {
           title: "Achievements",
           text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!",
           list: [
-            "We enrich throught learning.",
-            "Oke potential through individual attention.",
-            "The trusted name for specialized training.",
-            "People teach. People learn. This in whewe they connect.",
+            {
+              text: "We enrich throught learning.",
+            },
+            {
+              text: "We enrich throught learning.",
+            },
+            {
+              text: "We enrich throught learning.",
+            },
           ],
           image: "h12-tabs-icon-3",
         },

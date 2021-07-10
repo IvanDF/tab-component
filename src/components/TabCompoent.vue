@@ -9,7 +9,7 @@
         :style="HeaderTabStyles"
       >
         <TyphographyComponent
-          :color="tabIndex === i ? '#fff' : '#333'"
+          :color="tabIndex === i ? '#FFCDB2' : '#FFB4A2'"
           textType="H4"
           :text="el.title"
         />
@@ -21,16 +21,27 @@
       class="body-tab"
       v-show="tabIndex === i"
     >
-      <!-- <img
-            class="img-resp"
-            :src="require(`@/src/img/main/tabs/${el.image}.png`)"
-            alt="lorem ipsum dates dates"
-          /> -->
-      <TyphographyComponent textType="BODY" :text="el.text" />
+      <img
+        v-if="el.image"
+        class="img-resp"
+        :src="require(`/src/img/main/tabs/${el.image}.png`)"
+        alt="lorem ipsum dates dates"
+      />
+      <TyphographyComponent textType="BODY" color="#6D6875" :text="el.text" />
       <div v-if="el.list" class="body-tab-content">
         <ul class="body-tab-list">
           <li v-for="(item, i) in el.list" :key="i">
-            <TyphographyComponent textType="SMALL" :text="item" color="#200" />
+            <img
+              v-if="item.image"
+              class="img-resp"
+              :src="require(`/src/img/main/tabs/${item.image}.png`)"
+              alt="lorem ipsum dates dates"
+            />
+            <TyphographyComponent
+              textType="SMALL"
+              :text="item.text"
+              color="#6D6875"
+            />
           </li>
         </ul>
       </div>
@@ -82,6 +93,9 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  img {
+    width: 50px;
+  }
   .header-tabs {
     display: flex;
     width: 100%;
@@ -89,7 +103,25 @@ export default {
     justify-content: center;
     list-style: none;
     .header-tab {
+      position: relative;
       padding: 0 15px;
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        width: 90%;
+        height: 0;
+        background: rgba(#b5838d, 0.5);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        transition: height 250ms ease, width 300ms, border-radius 200ms 200ms;
+      }
+      &:hover {
+        &::after {
+          height: 10px;
+        }
+      }
       &:not(:first-child, :last-child) {
         margin: 0 5px;
       }
@@ -97,23 +129,37 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: gainsboro;
+      background: #6d6875;
       cursor: pointer;
       &.active {
-        background: gray;
+        h4 {
+          position: relative;
+          z-index: 2;
+        }
+        &::after {
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+        }
         font-size: 20px;
         cursor: unset;
       }
     }
   }
   .body-tab {
+    background: rgba(#b5838d, 0.2);
     width: 100%;
     height: 100%;
     box-shadow: 2px 2px 10px rgba(#000000, 0.2);
     margin-top: 5px;
     padding: 15px;
-    li {
-      list-style: none;
+    transition: all 250ms ease;
+    ul {
+      display: flex;
+      li {
+        padding: 15px 0;
+        list-style: none;
+      }
     }
   }
 }
