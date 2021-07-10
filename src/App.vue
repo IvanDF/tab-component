@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <TabCompoent msg="Welcome to Your Vue.js App" :infoList="infoList" />
+    <TabCompoent
+      :fullWidth="true"
+      msg="Welcome to Your Vue.js App"
+      :infoList="infoList"
+    />
   </div>
 </template>
 
