@@ -1,14 +1,18 @@
 <template>
-  <div class="tab-component" :style="CssVars">
+  <div class="tab-component" :style="TabComponentStyles">
     <ul class="header-tabs">
       <li
         v-for="(el, i) in infoList"
         :key="i"
         @click="setIndex(i)"
         :class="['header-tab', tabIndex === i ? 'active' : '']"
-        :style="CssVars"
+        :style="HeaderTabStyles"
       >
-        <TyphographyComponent textType="H4" :isUpper="true" :text="el.title" />
+        <TyphographyComponent
+          :color="tabIndex === i ? '#fff' : '#333'"
+          textType="H4"
+          :text="el.title"
+        />
       </li>
     </ul>
     <div
@@ -26,7 +30,7 @@
       <div v-if="el.list" class="body-tab-content">
         <ul class="body-tab-list">
           <li v-for="(item, i) in el.list" :key="i">
-            <TyphographyComponent textType="SMALL" :text="item" color="#d2fd" />
+            <TyphographyComponent textType="SMALL" :text="item" color="#200" />
           </li>
         </ul>
       </div>
@@ -52,15 +56,18 @@ export default {
   methods: {
     // setting index
     setIndex(index) {
-      console.log(this.fullWidth);
       this.tabIndex = index;
     },
   },
   computed: {
-    CssVars() {
+    TabComponentStyles() {
       return {
-        tabComponentWidth: this.fullWidth ? "100%" : "800px",
-        headerTabsWidth: this.infoList.length,
+        width: this.fullWidth ? "100%" : "800px",
+      };
+    },
+    HeaderTabStyles() {
+      return {
+        width: 100 / this.infoList.length + "%",
       };
     },
   },
@@ -77,16 +84,36 @@ export default {
   flex-direction: column;
   .header-tabs {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
     list-style: none;
     .header-tab {
-      padding: 15px;
-      width: calc(100% / var(--tabComponentWidth));
-      border: solid red 1px;
-      &.active {
-        font-size: 20px;
+      padding: 0 15px;
+      &:not(:first-child, :last-child) {
+        margin: 0 5px;
       }
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: gainsboro;
+      cursor: pointer;
+      &.active {
+        background: gray;
+        font-size: 20px;
+        cursor: unset;
+      }
+    }
+  }
+  .body-tab {
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px 2px 10px rgba(#000000, 0.2);
+    margin-top: 5px;
+    padding: 15px;
+    li {
+      list-style: none;
     }
   }
 }
