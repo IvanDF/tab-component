@@ -16,7 +16,7 @@ export default {
     return {
       infoList: [
         {
-          title: "Learn Possibilities",
+          title: "Lorem ipsum dolor",
           list: [
             {
               image: "h12-tabs-icon-1",
@@ -46,7 +46,7 @@ export default {
           image: "h12-tabs-icon-2",
         },
         {
-          title: "Achievements",
+          title: "Lorem ipsum",
           text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!",
           list: [
             {
@@ -65,7 +65,33 @@ export default {
           image: "h12-tabs-icon-3",
         },
         {
-          title: "Achievements",
+          title: "Lorem ipsum",
+          text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!",
+          list: [
+            {
+              image: "h12-tabs-icon-1",
+              text: "We enrich throught learning.",
+            },
+            {
+              image: "h12-tabs-icon-2",
+              text: "We enrich throught learning.",
+            },
+            {
+              image: "h12-tabs-icon-3",
+              text: "We enrich throught learning.",
+            },
+            {
+              image: "h12-tabs-icon-4",
+              text: "We enrich throught learning.",
+            },
+            {
+              image: "h12-tabs-icon-5",
+              text: "We enrich throught learning.",
+            },
+          ],
+        },
+        {
+          title: "Lorem",
           text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!",
           list: [
             {

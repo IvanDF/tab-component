@@ -1,12 +1,12 @@
 <template>
   <div class="tab-component" :style="TabComponentStyles">
-    <ul class="header-tabs">
+    <ul class="header-tabs" :style="HeaderTabStyles">
       <li
         v-for="(el, i) in infoList"
         :key="i"
         @click="setIndex(i)"
         :class="['header-tab', tabIndex === i ? 'active' : '']"
-        :style="HeaderTabStyles"
+        :style="TabItemsStyles"
       >
         <TyphographyComponent
           :color="tabIndex === i ? '#B2C9AB' : '#92B6B1'"
@@ -29,12 +29,8 @@
       />
       <TyphographyComponent textType="BODY" color="#666A86" :text="el.text" />
       <div v-if="el.list" class="body-tab-content">
-        <ul class="body-tab-list">
-          <li
-            v-for="(item, i) in el.list"
-            :key="i"
-            :style="'width: calc(100% / ' + el.list.length + ')'"
-          >
+        <ul class="body-tab-list" :style="TabListStyles">
+          <li v-for="(item, i) in el.list" :key="i" :style="TabListItemStyles">
             <img
               v-if="item.image"
               class="img-resp"
@@ -80,9 +76,30 @@ export default {
         width: this.fullWidth ? "100%" : "800px",
       };
     },
+    TabItemsStyles() {
+      return {
+        width: innerWidth <= 768 ? "100%" : 100 / this.infoList.length + "%",
+        marginRight: innerWidth <= 768 && "0",
+      };
+    },
     HeaderTabStyles() {
       return {
-        width: 100 / this.infoList.length + "%",
+        flexDirection: innerWidth <= 768 ? "column" : "row",
+      };
+    },
+    TabListItemStyles() {
+      return {
+        width:
+          innerWidth <= 768
+            ? "100%"
+            : this.infoList[this.tabIndex].list
+            ? 100 / this.infoList[this.tabIndex].list.length + "%"
+            : "100%",
+      };
+    },
+    TabListStyles() {
+      return {
+        flexDirection: innerWidth <= 768 ? "column" : "row",
       };
     },
   },
@@ -91,7 +108,6 @@ export default {
 
 <style scoped lang="scss">
 .tab-component {
-  width: var(--tabComponentWidth);
   max-width: 100%;
   display: flex;
   align-items: center;
