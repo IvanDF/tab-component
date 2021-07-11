@@ -9,7 +9,7 @@
         :style="HeaderTabStyles"
       >
         <TyphographyComponent
-          :color="tabIndex === i ? '#FFCDB2' : '#FFB4A2'"
+          :color="tabIndex === i ? '#B2C9AB' : '#92B6B1'"
           textType="H4"
           :text="el.title"
         />
@@ -27,10 +27,14 @@
         :src="require(`/src/img/main/tabs/${el.image}.png`)"
         alt="lorem ipsum dates dates"
       />
-      <TyphographyComponent textType="BODY" color="#6D6875" :text="el.text" />
+      <TyphographyComponent textType="BODY" color="#666A86" :text="el.text" />
       <div v-if="el.list" class="body-tab-content">
         <ul class="body-tab-list">
-          <li v-for="(item, i) in el.list" :key="i">
+          <li
+            v-for="(item, i) in el.list"
+            :key="i"
+            :style="'width: calc(100% / ' + el.list.length + ')'"
+          >
             <img
               v-if="item.image"
               class="img-resp"
@@ -40,7 +44,7 @@
             <TyphographyComponent
               textType="SMALL"
               :text="item.text"
-              color="#6D6875"
+              color="#666A86"
             />
           </li>
         </ul>
@@ -112,7 +116,7 @@ export default {
         bottom: 0;
         width: 90%;
         height: 0;
-        background: rgba(#b5838d, 0.5);
+        background: rgba(#788aa3, 0.5);
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
         transition: height 250ms ease, width 300ms, border-radius 200ms 200ms;
@@ -122,14 +126,14 @@ export default {
           height: 10px;
         }
       }
-      &:not(:first-child, :last-child) {
-        margin: 0 5px;
+      &:not(:last-child) {
+        margin-right: 5px;
       }
       height: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #6d6875;
+      background: #666a86;
       cursor: pointer;
       &.active {
         h4 {
@@ -147,18 +151,25 @@ export default {
     }
   }
   .body-tab {
-    background: rgba(#b5838d, 0.2);
+    background: rgba(#788aa3, 0.2);
     width: 100%;
     height: 100%;
-    box-shadow: 2px 2px 10px rgba(#000000, 0.2);
+    box-shadow: 2px 2px 10px rgba(#666a86, 0.2);
     margin-top: 5px;
     padding: 15px;
     transition: all 250ms ease;
     ul {
       display: flex;
       li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         padding: 15px 0;
         list-style: none;
+        img {
+          margin-bottom: 15px;
+        }
       }
     }
   }

@@ -23,11 +23,19 @@ export default {
               text: "We enrich throught learning.",
             },
             {
-              image: "h12-tabs-icon-1",
+              image: "h12-tabs-icon-2",
               text: "We enrich throught learning.",
             },
             {
-              image: "h12-tabs-icon-1",
+              image: "h12-tabs-icon-3",
+              text: "We enrich throught learning.",
+            },
+            {
+              image: "h12-tabs-icon-4",
+              text: "We enrich throught learning.",
+            },
+            {
+              image: "h12-tabs-icon-5",
               text: "We enrich throught learning.",
             },
           ],
@@ -50,8 +58,29 @@ export default {
             {
               text: "We enrich throught learning.",
             },
+            {
+              text: "We enrich throught learning.",
+            },
           ],
           image: "h12-tabs-icon-3",
+        },
+        {
+          title: "Achievements",
+          text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!",
+          list: [
+            {
+              text: "We enrich throught learning.",
+            },
+            {
+              text: "We enrich throught learning.",
+            },
+            {
+              text: "We enrich throught learning.",
+            },
+            {
+              text: "We enrich throught learning.",
+            },
+          ],
         },
       ],
     };
@@ -67,6 +96,12 @@ export default {
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  background: #ddd;
+  /* background: #333; */
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
