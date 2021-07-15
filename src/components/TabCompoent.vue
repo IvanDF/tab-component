@@ -123,8 +123,15 @@ export default {
     justify-content: center;
     list-style: none;
     .header-tab {
+      height: 80px;
+      display: flex;
       position: relative;
+      align-items: center;
+      justify-content: center;
+      background: #666a86;
+      cursor: pointer;
       padding: 0 15px;
+      transition: all 300ms ease;
       &::after {
         content: "";
         position: absolute;
@@ -145,13 +152,8 @@ export default {
       &:not(:last-child) {
         margin-right: 5px;
       }
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #666a86;
-      cursor: pointer;
       &.active {
+        box-shadow: 3px 2px 2px rgba(#000, 0.6);
         h4 {
           position: relative;
           z-index: 2;
