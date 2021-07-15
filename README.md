@@ -1,24 +1,3 @@
-# tab-component
+<h1 align="center"> Tab Component </h1>
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<img align="center" src="./src/img/preview.png" width="100%">
